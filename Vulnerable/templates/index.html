@@ -1,0 +1,20 @@
+<html>
+<head>
+        <link rel="stylesheet" type="text/css" href="/static/style.css">
+        <title>MY SITE</title>
+</head>
+<body>
+
+    <h1>Stage 1</h1>
+    <img src="/static/New-York-City.jpg" alt="My image"/>
+     <p>Who took that photo?</p>
+
+<form action="/stage_1/" method="POST">
+    <label for="password">password: </label>
+    <input id="password" type="text" name="password" value="{{ password }}">
+    <input type="submit" value="OK">
+</form>
+
+
+</body>
+</html>

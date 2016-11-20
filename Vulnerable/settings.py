@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Vulnerable'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -67,6 +68,13 @@ TEMPLATES = [
         },
     },
 ]
+
+TEMPLATE_DIRS = (
+   # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+   # Always use forward slashes, even on Windows.
+   # Don't forget to use absolute paths, not relative paths.
+   BASE_DIR + '/home/bud/workspace/ITSW WiSe 2016/VulnerableDjango/Vulnerable/templates',
+)
 
 WSGI_APPLICATION = 'Vulnerable.wsgi.application'
 
