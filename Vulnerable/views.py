@@ -15,6 +15,9 @@ def stage_1(request):
 def stage_2(request):
 	return render_to_response('login.html')
 
+def stage_3(request):
+    return render_to_response('welcome.html')
+
 
 @csrf_exempt
 def pass_1(request):
@@ -45,9 +48,9 @@ def pass_2(request):
         data = c.fetchone()
 
     if password == data[0]:
-        return HttpResponse("GZ")
+        return render_to_response('welcome.html')
         
     else:
-        return HttpResponse("%s" (data[0]))
+        return render_to_response('login.html')
 
 

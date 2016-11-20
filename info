@@ -1,0 +1,6 @@
+Superuser: JGordon EMail:JimGordon@Gotham.com Password: HugeBatmanLover
+Users:	Robin		Robin@Gotham.com			Password:
+		Batman		Batman@Gotham.com			Password:WishICanFly
+		TheJoker	Joker@GothamCrimeScene.com	Password:
+
+--To-Do:		Eigenen SQL File Schreiben in dem PW Base64 verschlüsselt ist und für Login nutzen
