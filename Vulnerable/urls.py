@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from Vulnerable.views import hello, stage_1, pass_1
+from Vulnerable.views import hello, stage_1, pass_1, stage_2, pass_2
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^hello/$', hello),
     url(r'^$', stage_1),
     url(r'^stage_1/$', pass_1),
+    url(r'^$', stage_2),
+    url(r'^stage_2/$', pass_2),
 ]
