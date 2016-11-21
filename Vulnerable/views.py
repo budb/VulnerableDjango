@@ -36,11 +36,12 @@ def pass_2(request):
     conn = sqlite3.connect("userdata.db")
     c = conn.cursor()
 
-    if request.method == "GET":
-        username = request.GET["username"]
-        password = request.GET["password"]
-
-        c.execute("SELECT password FROM USER WHERE username='%s'" %(username))
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        
+        makeMeInjectable = "SELECT password FROM USER WHERE username='%s'" %(username,)
+        c.execute(makeMeInjectable)
         data = c.fetchone()
 
     if data is None:
@@ -55,11 +56,12 @@ def pass_3(request):
     conn = sqlite3.connect("userdata.db")
     c = conn.cursor()
 
-    if request.method == "GET":
-        username = request.GET["username"]
-        password = request.GET["password"]
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
 
-        c.execute("SELECT password FROM USER WHERE username='%s'" %(username))
+        veryVulnerable = "SELECT password FROM USER WHERE username='%s'" %(username,)
+        c.execute(veryVulnerable)
         data = c.fetchone()
     
     if data is None:
