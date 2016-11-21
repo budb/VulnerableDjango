@@ -35,16 +35,15 @@ def pass_2(request):
         username = request.POST['username']
         password = request.POST['password']
         
-        makeMeInjectable = "SELECT password FROM USER WHERE username='%s'" %(username,)
+        makeMeInjectable = "SELECT id FROM USER WHERE username='%s' and password = '%s'" %(username,password,)
         c.execute(makeMeInjectable)
         data = c.fetchone()
 
     if data is None:
         return render_to_response('login2.html')
-    elif password == data[0]:
-        return render_to_response('welcome.html')       
     else:
-        return render_to_response('login2.html')
+        return render_to_response('welcome.html')       
+
 
 @csrf_exempt
 def pass_3(request):
@@ -55,16 +54,14 @@ def pass_3(request):
         username = request.POST["username"]
         password = request.POST["password"]
 
-        veryVulnerable = "SELECT password FROM USER WHERE username='%s'" %(username,)
+        veryVulnerable = "SELECT id FROM USER WHERE username='%s' and password = '%s'" %(username,password,)
         c.execute(veryVulnerable)
         data = c.fetchone()
     
     if data is None:
         return render_to_response('login2.html')
-    elif password == data[0]:
-        return render_to_response('welcome.html')
     else:
-        return render_to_response('login2.html')
+        return render_to_response('welcome.html')
         
 
 
