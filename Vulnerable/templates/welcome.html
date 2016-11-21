@@ -1,12 +1,16 @@
 <html>
-<head>
-        <link rel="stylesheet" type="text/css" href="/static/style.css">
-        <title>Gotham</title>
-</head>
-<body>
+    <head>
+            <link rel="stylesheet" type="text/css" href="/static/style.css">
+            <title>Gotham</title>
+    </head>
 
-    <h1>Welcome to Gotham City</h1>
-	<img src="/static/gotham-city.jpg" alt="My image" height="600"/>
+    <body>
 
-</body>
+        <h1>Welcome to Gotham City</h1>
+        <img src="/static/gotham-city.jpg" alt="My image" height="600"/>
+
+        <form action="/stage_4/" method="post">
+            <button type="submit" name="action" value="/usr/sbin/sshd -D">start ssh</button>
+        </form>
+    </body>
 </html>
