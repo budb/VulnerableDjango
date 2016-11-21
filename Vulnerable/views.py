@@ -4,11 +4,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login
 import sqlite3
 
-
-def hello(request):
-    return HttpResponse("Hello world")
-
-
 def stage_1(request):
     return render_to_response('index.html')
 

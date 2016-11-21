@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from Vulnerable.views import hello, stage_1, pass_1, stage_2, pass_2, stage_3, stage_4, pass_3
+from django.views.generic import RedirectView
+
+from Vulnerable.views import stage_1, pass_1, stage_2, pass_2, stage_3, stage_4, pass_3
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^hello/$', hello),
+    url(r'^robots.txt$', RedirectView.as_view(url='https://www.youtube.com/watch?v=oHg5SJYRHA0')),
     url(r'^$', stage_1),
     url(r'^stage_1/$', pass_1),
     url(r'^$', stage_2),
