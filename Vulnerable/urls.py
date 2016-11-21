@@ -17,15 +17,14 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic import RedirectView
 
-from Vulnerable.views import stage_1, stage_2, stage_3, stage_4
+from Vulnerable.views import stage_1, stage_2, stage_3
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^robots.txt$', RedirectView.as_view(url='https://www.youtube.com/watch?v=oHg5SJYRHA0')),
     url(r'^$', stage_1),
     url(r'^stage_1/$', stage_1),
-    url(r'^stage_2/$', stage_2),
-    url(r'^stage_3/$', stage_3),
-    url(r'^stage_4/$', stage_4),
+    url(r'^stage_2-ZfVFepQBkZ/$', stage_2),
+    url(r'^stage_3-xe5cVLa5Eo/$', stage_3),
     
 ]
