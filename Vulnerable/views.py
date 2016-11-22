@@ -1,23 +1,20 @@
-import sys, os, threading, subprocess as sub
-from django.http import HttpResponse
-from django.shortcuts import render_to_response
+import threading, subprocess as sub
 from django.views.decorators.csrf import csrf_exempt
-from django.contrib.auth import authenticate, login
+from django.shortcuts import render_to_response, render
 import sqlite3, logging
 
 logger = logging.getLogger(__name__)
 
 
-@csrf_exempt
 def stage_1(request):
     if request.method == "GET":
-        return render_to_response('stage_1.html')
+        return render(request, 'stage_1.html')
     elif request.method == "POST":
         get_text = request.POST["password"]
         if get_text == "batman":
-            return render_to_response('stage_2.html')
+            return render(request, 'stage_2.html')
         else:
-            return render_to_response('stage_1.html')
+            return render(request, 'stage_1.html')
 
 
 @csrf_exempt

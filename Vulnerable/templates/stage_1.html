@@ -9,7 +9,8 @@
     <img src="/static/New-York-City.jpg" alt="My image"/>
      <p>Who took that photo?</p>
 
-<form action="/stage_1/" method="POST">{% csrf_token %}
+<form action="/stage_1/" method="POST">
+    {% csrf_token %}
     <label for="password">password: </label>
     <input id="password" type="text" name="password" value="{{ password }}">
     <input type="submit" value="OK">
